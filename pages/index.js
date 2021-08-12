@@ -1,34 +1,25 @@
-import { getHomePage, getProjects, getNavigation, getFooter } from '../lib/api';
-import ProjectCard from '../components/ProjectCard';
+import { getHomePage, getNavigation } from '../lib/api';
 import React from 'react';
+import Navigation from '../components/Navigations';
 
-import styles from '../styles/Home.module.css';
-
-export default function Home({ homePageData, projectsData }) {
+export default function Home({ navigationData, homePageData }) {
+  const { home_page_image: image } = homePageData;
   return (
-    <div className={styles.container}>
-      <div>
-        {projectsData !== undefined &&
-          projectsData.map((p, index) => {
-            return <ProjectCard key={index} projectData={p} />;
-          })}
-      </div>
+    <div>
+      <Navigation navigationData={navigationData} footerData={footerData} />
+      <img src={image.url} alt={image.alt} width={'20%'} />
     </div>
   );
 }
 
 export async function getStaticProps() {
   const homePageData = await getHomePage();
-  const projectsData = await getProjects();
   const navigationData = await getNavigation();
-  const footerData = await getFooter();
 
   return {
     props: {
       homePageData,
-      projectsData,
       navigationData,
-      footerData,
     },
   };
 }
