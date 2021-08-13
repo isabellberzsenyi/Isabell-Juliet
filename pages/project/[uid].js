@@ -1,15 +1,10 @@
 import React from 'react';
+import ProjectPage from '../../components/ProjectPage';
 import { getProjects, getProject } from '../../lib/api';
 import { getString } from '../../lib/richText';
 
 export default function Project({ projectData }) {
-  const { title, description } = projectData;
-  return (
-    <div>
-      <p>Story</p>
-      {getString(title)}
-    </div>
-  );
+  return <ProjectPage projectData={projectData} />;
 }
 
 export async function getStaticPaths() {
