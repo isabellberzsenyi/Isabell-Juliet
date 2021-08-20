@@ -1,8 +1,8 @@
-import { getHomePage, getNavigation } from '../lib/api';
+import { getFooter, getHomePage, getNavigation } from '../lib/api';
 import React from 'react';
-import Navigation from '../components/Navigations';
+import Navigation from '../components/navigation/Navigation';
 
-export default function Home({ navigationData, homePageData }) {
+export default function Home({ navigationData, homePageData, footerData }) {
   const { home_page_image: image } = homePageData;
   return (
     <div>
@@ -15,11 +15,13 @@ export default function Home({ navigationData, homePageData }) {
 export async function getStaticProps() {
   const homePageData = await getHomePage();
   const navigationData = await getNavigation();
+  const footerData = await getFooter();
 
   return {
     props: {
       homePageData,
       navigationData,
+      footerData,
     },
   };
 }

@@ -1,6 +1,6 @@
 import { getString } from '../lib/richText';
-import Navigation from './Navigations';
-import Footer from './Footer';
+import Navigation from './navigation/Navigation';
+import Footer from './footer/Footer';
 import PageLink from './PageLink';
 
 export default function WorkPage({ workPageData, projectsData, navigationData, footerData }) {

@@ -1,5 +1,5 @@
-import Navigation from './Navigations';
-import Footer from './Footer';
+import Navigation from './navigation/Navigation';
+import Footer from './footer/Footer';
 import { getString } from '../lib/richText';
 
 export default function AboutPage({ aboutPageData, navigationData, footerData }) {
