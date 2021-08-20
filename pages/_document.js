@@ -6,6 +6,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
+        <Head />
         <body style={{ backgroundColor: colors.BLUSH }}>
           <Main />
           <NextScript />
