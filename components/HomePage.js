@@ -14,7 +14,7 @@ const HomeTitle = styled(H3)`
 export default function HomePage({ navigationData, homePageData, footerData }) {
   const { home_page_title: title } = homePageData;
   return (
-    <>
+    <div style={{ position: 'relative', minHeight: '100vh' }}>
       <Navigation navigationData={navigationData} footerData={footerData} />
       <div
         style={{
@@ -26,10 +26,10 @@ export default function HomePage({ navigationData, homePageData, footerData }) {
           flexDirection: 'column',
         }}
       >
-        <H3>isabell berzsenyi</H3>
+        <H3 style={{ color: colors.RASPBERRY }}>isabell berzsenyi</H3>
         <HomeTitle>{getString(title)}</HomeTitle>
       </div>
       <Footer footerData={footerData} />
-    </>
+    </div>
   );
 }

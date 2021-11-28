@@ -2,28 +2,32 @@ import React from 'react';
 import { getString } from '../lib/richText';
 import Navigation from './navigation/Navigation';
 import Footer from './footer/Footer';
-import PageLink from './PageLink';
+import { H1, P } from '../style/typography';
+import ProjectCard from './ProjectCard';
 
 export default function WorkPage({ workPageData, projectsData, navigationData, footerData }) {
   const { work_page_title: title, work_page_description: description } = workPageData;
 
   const ProjectPreviews = projectsData.map((project) => {
-    const projectUrl = '/project/' + project.uid;
-    return (
-      <div key={project.uid}>
-        <PageLink href={projectUrl}>{getString(project.title)}</PageLink>
-        <br />
-        {getString(project.description)}
-      </div>
-    );
+    return <ProjectCard projectData={project} key={project.uid} />;
   });
   return (
-    <div>
+    <div style={{ position: 'relative', minHeight: '100vh' }}>
       <Navigation navigationData={navigationData} footerData={footerData} />
-      <div>{getString(title)}</div>
-      <div>{getString(description)}</div>
+      <div
+        style={{
+          width: '50%',
+          margin: 'auto',
+          marginTop: '5em',
+        }}
+      >
+        <H1>{getString(title).toUpperCase()}</H1>
+        <P>{getString(description)}</P>
+      </div>
       <br />
-      {ProjectPreviews}
+      <div style={{ width: '65%', margin: 'auto', display: 'flex', flexDirection: 'column' }}>
+        {ProjectPreviews}
+      </div>
       <br />
       <Footer footerData={footerData} />
     </div>

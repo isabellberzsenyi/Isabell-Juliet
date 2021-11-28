@@ -49,6 +49,7 @@ const H3 = styled.h3`
 `;
 
 const H4 = styled.h4`
+  margin: 0;
   font-family: ${fonts.notoSans};
   font-weight: ${fontWeights.normal};
   color: ${colors.CHOCOLATE};
@@ -57,11 +58,13 @@ const H4 = styled.h4`
 `;
 
 const P = styled.p`
+  padding: 0;
+  margin: 1em 0;
   font-family: ${fonts.notoSans};
   font-weight: ${fontWeights.normal};
   color: ${colors.MUD};
-  font-size: 1em;
-  line-height: 1.8em;
+  font-size: 0.8em;
+  line-height: 1.5em;
 `;
 
 export { fonts, fontWeights, P, H1, H2, H3, H4 };
