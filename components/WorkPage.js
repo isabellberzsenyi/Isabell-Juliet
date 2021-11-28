@@ -1,3 +1,4 @@
+import React from 'react';
 import { getString } from '../lib/richText';
 import Navigation from './navigation/Navigation';
 import Footer from './footer/Footer';
@@ -9,7 +10,7 @@ export default function WorkPage({ workPageData, projectsData, navigationData, f
   const ProjectPreviews = projectsData.map((project) => {
     const projectUrl = '/project/' + project.uid;
     return (
-      <div>
+      <div key={project.uid}>
         <PageLink href={projectUrl}>{getString(project.title)}</PageLink>
         <br />
         {getString(project.description)}

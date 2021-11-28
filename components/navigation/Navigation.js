@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getString } from '../../lib/richText';
 import PageLink from '../PageLink';
 import Footer from '../footer/Footer';
@@ -17,6 +17,9 @@ const NavigationWrapper = styled.div`
   padding: 1em;
   z-index: 100;
   height: 5em;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const MenuOpen = styled.div`
@@ -25,11 +28,11 @@ const MenuOpen = styled.div`
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: ${colors.MUD};
+  background-color: ${colors.CHOCOLATE};
   color: ${colors.BLUSH};
   z-index: 15;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 `;
 
 const LinkWrapper = styled.button`
@@ -37,7 +40,8 @@ const LinkWrapper = styled.button`
   background: none;
   border: none;
   text-align: left;
-  font-style: ${fonts.notoSans};
+  font-family: ${fonts.notoSans};
+  font-weight: ${fontWeights.normal};
   color: ${(props) => (props.selected ? colors.BLUSH : colors.ALMOND)};
 
   &:hover {
@@ -92,26 +96,34 @@ export default function Navigation({ navigationData, footerData }) {
     });
   };
   return (
-    <NavigationWrapper>
-      <h1>BLAH</h1>
+    <>
       {isMenuOpen ? (
         <MenuOpen>
           <MenuOpenCloseWrapper onClick={() => setIsMenuOpen(false)}>
-            <h1>CLOSE</h1>
+            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <h1 style={{ paddingRight: '1em' }}>CLOSE</h1>
+            </div>
           </MenuOpenCloseWrapper>
-          {getNavigationLinks()}
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '6em' }}>
+            {getNavigationLinks()}
+          </div>
           <Footer footerData={footerData} />
         </MenuOpen>
       ) : (
-        <MenuOpenCloseWrapper
-          onClick={() => {
-            setIsMenuOpen(true);
-          }}
-        >
-          <h1>MENU</h1>
-        </MenuOpenCloseWrapper>
+        <NavigationWrapper>
+          <PageLink href={'/'}>
+            <h2 style={{ color: colors.CHOCOLATE }}>Isabell Juliet</h2>
+          </PageLink>
+          <MenuOpenCloseWrapper
+            onClick={() => {
+              setIsMenuOpen(true);
+            }}
+          >
+            <h1 style={{ paddingRight: '0.5em', color: colors.CHOCOLATE }}>MENU</h1>
+          </MenuOpenCloseWrapper>
+        </NavigationWrapper>
       )}
-    </NavigationWrapper>
+    </>
   );
 }
 
@@ -120,21 +132,39 @@ function NavigationLink({ navigationLink, onPage }) {
   switch (link.link_type) {
     case 'Document':
       return (
-        <LinkWrapper selected={onPage}>
-          <PageLink href={uid === 'home' ? '/' : `/${uid}`}>
+        <PageLink href={uid === 'home' ? '/' : `/${uid}`}>
+          <LinkWrapper
+            selected={onPage}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              paddingRight: '2.5em',
+              paddingLeft: '2.5em',
+            }}
+          >
             <MenuTitle>{getString(title)}</MenuTitle>
-          </PageLink>
-          <MenuSubtitle>{getString(subtitle)}</MenuSubtitle>
-        </LinkWrapper>
+            <MenuSubtitle>{getString(subtitle)}</MenuSubtitle>
+          </LinkWrapper>
+        </PageLink>
       );
     case 'Web':
       return (
-        <LinkWrapper selected={onPage}>
-          <a href={link.url} target="_blank" rel="noreferrer">
+        <a href={link.url} target="_blank" rel="noreferrer">
+          <LinkWrapper
+            selected={onPage}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              paddingRight: '2.5em',
+              paddingLeft: '2.5em',
+            }}
+          >
             <MenuTitle>{getString(title)}</MenuTitle>
-          </a>
-          <MenuSubtitle>{getString(subtitle)}</MenuSubtitle>
-        </LinkWrapper>
+            <MenuSubtitle>{getString(subtitle)}</MenuSubtitle>
+          </LinkWrapper>
+        </a>
       );
     default:
       return null;

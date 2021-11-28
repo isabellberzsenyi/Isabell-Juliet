@@ -1,3 +1,4 @@
+import React from 'react';
 import { getString } from '../lib/richText';
 
 export default function Project({ projectData }) {

@@ -1,6 +1,5 @@
 import WorkPage from '../components/WorkPage';
 import { getFooter, getNavigation, getProjects, getWorkPage } from '../lib/api';
-import { getString } from '../lib/richText';
 
 export default function Work({ workPageData, projectsData, footerData, navigationData }) {
   return (

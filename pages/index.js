@@ -1,13 +1,14 @@
 import { getFooter, getHomePage, getNavigation } from '../lib/api';
 import React from 'react';
 import Navigation from '../components/navigation/Navigation';
+import { getString } from '../lib/richText';
 
 export default function Home({ navigationData, homePageData, footerData }) {
-  const { home_page_image: image } = homePageData;
+  const { home_page_title: title } = homePageData;
   return (
     <div>
       <Navigation navigationData={navigationData} footerData={footerData} />
-      <img src={image.url} alt={image.alt} width={'20%'} />
+      {getString(title)}
     </div>
   );
 }

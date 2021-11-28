@@ -1,7 +1,6 @@
 import React from 'react';
 import ProjectPage from '../../components/ProjectPage';
 import { getProjects, getProject } from '../../lib/api';
-import { getString } from '../../lib/richText';
 
 export default function Project({ projectData }) {
   return <ProjectPage projectData={projectData} />;
