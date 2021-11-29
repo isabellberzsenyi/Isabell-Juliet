@@ -36,7 +36,7 @@ export default function AboutPage({ aboutPageData, navigationData, footerData })
   } = footerData;
 
   return (
-    <div style={{ position: 'relative', minHeight: '100vh' }}>
+    <div style={{ position: 'relative', minHeight: '80vh' }}>
       <Navigation navigationData={navigationData} footerData={footerData} />
       <AboutPageContainer>
         <H1>{getString(title).toUpperCase()}</H1>

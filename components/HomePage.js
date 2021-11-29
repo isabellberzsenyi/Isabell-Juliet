@@ -14,7 +14,7 @@ const HomeTitle = styled(H3)`
 export default function HomePage({ navigationData, homePageData, footerData }) {
   const { home_page_title: title } = homePageData;
   return (
-    <div style={{ position: 'relative', minHeight: '100vh' }}>
+    <div style={{ position: 'relative', minHeight: '80vh' }}>
       <Navigation navigationData={navigationData} footerData={footerData} />
       <div
         style={{
