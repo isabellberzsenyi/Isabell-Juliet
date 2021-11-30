@@ -14,16 +14,17 @@ const HomeTitle = styled(H3)`
 export default function HomePage({ navigationData, homePageData, footerData }) {
   const { home_page_title: title } = homePageData;
   return (
-    <div style={{ position: 'relative', minHeight: '80vh' }}>
+    <div style={{ position: 'relative', minHeight: '100vh' }}>
       <Navigation navigationData={navigationData} footerData={footerData} />
       <div
         style={{
           width: '50%',
           margin: 'auto',
-          marginTop: '8em',
+          paddingTop: '8em',
           textAlign: 'center',
           display: 'flex',
           flexDirection: 'column',
+          paddingBottom: '10vh',
         }}
       >
         <H3 style={{ color: colors.RASPBERRY }}>isabell berzsenyi</H3>

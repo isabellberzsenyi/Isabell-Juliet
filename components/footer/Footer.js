@@ -14,6 +14,7 @@ const FooterContainer = styled.div`
   padding-right: 2em;
   border-top: 2px solid ${colors.BLUSH};
   width: 100%;
+  height: 10vh;
   bottom: 0;
   right: 0;
   display: flex;

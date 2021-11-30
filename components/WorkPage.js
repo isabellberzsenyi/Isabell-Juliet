@@ -18,7 +18,7 @@ export default function WorkPage({ workPageData, projectsData, navigationData, f
         style={{
           width: '50%',
           margin: 'auto',
-          marginTop: '5em',
+          paddingTop: '5em',
         }}
       >
         <H1>{getString(title).toUpperCase()}</H1>

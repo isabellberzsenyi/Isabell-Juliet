@@ -9,7 +9,8 @@ import styled from 'styled-components';
 const AboutPageContainer = styled.div`
   width: 50%;
   margin: auto;
-  margintop: 5em;
+  padding-top: 5em;
+  padding-bottom: 10vh;
 `;
 
 const AboutLinkWrapper = styled.div`
@@ -36,7 +37,7 @@ export default function AboutPage({ aboutPageData, navigationData, footerData })
   } = footerData;
 
   return (
-    <div style={{ position: 'relative', minHeight: '80vh' }}>
+    <div style={{ position: 'relative', minHeight: '100vh' }}>
       <Navigation navigationData={navigationData} footerData={footerData} />
       <AboutPageContainer>
         <H1>{getString(title).toUpperCase()}</H1>
