@@ -11,7 +11,7 @@ const NavigationWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   width: 100%;
   padding: 1em;
@@ -111,9 +111,9 @@ export default function Navigation({ navigationData, footerData }) {
         </MenuOpen>
       ) : (
         <NavigationWrapper>
-          <PageLink href={'/'}>
+          {/* <PageLink href={'/'}>
             <h2 style={{ color: colors.CHOCOLATE }}>Isabell Juliet</h2>
-          </PageLink>
+          </PageLink> */}
           <MenuOpenCloseWrapper
             onClick={() => {
               setIsMenuOpen(true);

@@ -27,7 +27,7 @@ export default function HomePage({ navigationData, homePageData, footerData }) {
           paddingBottom: '10vh',
         }}
       >
-        <H3>isabell berzsenyi</H3>
+        <H3>isabell juliet berzsenyi</H3>
         <HomeTitle>{getString(title)}</HomeTitle>
       </div>
       <Footer footerData={footerData} />
