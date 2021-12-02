@@ -7,7 +7,7 @@ import { H3 } from '../style/typography';
 import { colors } from '../style/colors';
 
 const HomeTitle = styled(H3)`
-  border-top: 2px solid ${colors.ALMOND};
+  border-top: 2px solid ${colors.RASPBERRY};
   padding-top: 1em;
 `;
 
@@ -27,7 +27,7 @@ export default function HomePage({ navigationData, homePageData, footerData }) {
           paddingBottom: '10vh',
         }}
       >
-        <H3 style={{ color: colors.RASPBERRY }}>isabell berzsenyi</H3>
+        <H3>isabell berzsenyi</H3>
         <HomeTitle>{getString(title)}</HomeTitle>
       </div>
       <Footer footerData={footerData} />

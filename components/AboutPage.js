@@ -45,14 +45,14 @@ export default function AboutPage({ aboutPageData, navigationData, footerData })
         <AboutBioWrapper>
           <P>{getString(aboutBio)}</P>
         </AboutBioWrapper>
-        <div>
+        {/* <div>
           <AboutSubtitle>LET'S CONNECT</AboutSubtitle>
           <AboutLinkWrapper>
             <FooterLink label="Email " link={emailLink} light={true} />
             <FooterLink label="LinkedIn " link={linkedInLink} light={true} />
             <FooterLink label="GitHub" link={gitHubLink} light={true} />
           </AboutLinkWrapper>
-        </div>
+        </div> */}
       </AboutPageContainer>
       <Footer footerData={footerData} />
     </div>
