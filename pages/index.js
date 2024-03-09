@@ -4,7 +4,20 @@ import HomePage from '../components/HomePage';
 
 export default function Home({ navigationData, homePageData, footerData }) {
   return (
-    <HomePage navigationData={navigationData} homePageData={homePageData} footerData={footerData} />
+    <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <div
+        style={{
+          width: '100%',
+          paddingTop: '8em',
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        work in progress
+      </div>
+    </div>
+    // <HomePage navigationData={navigationData} homePageData={homePageData} footerData={footerData} />
   );
 }
 
